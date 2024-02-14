@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript 1</title>
+        <style>
+            #zone {
+                width: 200px;
+                height: 100px;
+                border: 1px solid black;
+                margin: 20px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <bodey>
+        <div id="zone"></div>
+
+        <script src="app.js">  </script>
+        <script>
+            var zone = document.getElementById("zone");
+        
+            function into() {
+                zone.innerHTML = "enter";
+            }
+        
+            function out() {
+                zone.innerHTML = "out";
+            }
+        
+            function bgColor() {
+                zone.style.backgroundColor = "lightblue";
+            }
+        
+            zone.onmousemove = into;
+            zone.onmouseout = out;
+            zone.onkeydown = bgColor;
+        
+            //# 1
+            function isString(data) {
+                return typeof data === "string";
+            }
+        
+            console.log("Exercice 1 : ");
+            console.log(isString('hello65656')); // true
+            console.log(isString([1, 6, 9])); // false
+            console.log(isString(5)); // false
+            console.log(isString("Is54545et")); // true
+        
+            //# 2
+            function isBlank(input) {
+                return input.trim() === '';
+            }
+        
+            console.log(isBlank('')); // true
+            console.log(isBlank('hjhjh')); // false 
+        
+            //# 3
+            function stringToArray(str) {
+                return str.split(' ');
+            }
+        
+            console.log(stringToArray("ISET Tataouine 2023 Groupe1er"));
+            // ["ISET", "Tataouine", "2023"]
+        
+            //# 4
+            function extractString(str1, length) {
+                return str1.substring(0, length);
+            }
+        
+            console.log(extractString("Robin Singh", 4)); // "Robi"
+            console.log(extractString("ISET Tataouine", 7)); // "ISET Ta"
+        
+            //# 5
+            function protectEmail(user_email) {
+                var atIndex = user_email.indexOf('@');
+                var username = user_email.substring(0, atIndex);
+                var domain = user_email.substring(atIndex);
+                var hiddenUsername = username.substring(0, Math.min(username.length, 4)) + '...';
+                return hiddenUsername + domain;
+            }
+        
+            console.log(protectEmail("isettataouine@gmail.com"));
+            // "isetta...@gmail.com"
+        </script>
+    </bodey>
+</html>
